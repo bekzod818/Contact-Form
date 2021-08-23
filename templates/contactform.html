@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <form id="contact" action="" method="post" role="form">
+            {% csrf_token %}
+            <h3>Biz bilan bog'laning</h3>
+            <h4>Bizga savollaringiz bormi?</h4>
+            <fieldset>
+                <input placeholder="Ismingiz" type="text" name="name" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Email manzilingiz" type="email" name="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Telefon raqamingiz" type="tel" name="phone" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Nima mavzuda" type='text' name="theme" tabindex="4" required>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Xabaringizni shu yerga qoldiring..." name="body" tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Yuborish</button>
+            </fieldset>
+            <p class="copyright">Designed by <a href="{% url 'success' %}" target="_blank"
+                                                title="Colorlib">Rakhimov</a></p>
+        </form>
+    </div>
+
+{% endblock content %}
